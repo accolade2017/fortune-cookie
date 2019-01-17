@@ -1,0 +1,22 @@
+{
+  "name": "fortune-cookie",
+  "version": "1.0.0",
+  "description": "株式会社ACCOLADE 社内用占いシステム",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/accolade2017/fortune-cookie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/accolade2017/fortune-cookie/issues"
+  },
+  "homepage": "https://github.com/accolade2017/fortune-cookie#readme",
+  "dependencies": {
+    "bulma": "^0.7.2"
+  }
+}
