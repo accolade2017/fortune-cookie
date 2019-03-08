@@ -1,0 +1,134 @@
+﻿# A5:ER FORMAT:12
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=accftdb
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=10
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Relation]
+Entity1=fortunes
+Entity2=users_fortunes
+RelationType1=2
+RelationType2=3
+Fields1=fortune_id
+Fields2=fortune_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3050,6950,3570,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=305
+Bar2=695
+Bar3=357
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=users
+Entity2=users_fortunes
+RelationType1=2
+RelationType2=3
+Fields1=user_id
+Fields2=user_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3269,6731,1871,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=327
+Bar2=673
+Bar3=187
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=users_fortunes
+LName=占い結果
+Comment=ユーザー毎の占い結果
+TableOption=
+Page=Main
+Left=1000
+Top=600
+Field="ユーザーID","user_id","BIGINT","NOT NULL",0,"","ユーザーID",$FFFFFFFF,""
+Field="占い年月日","fortune_ymd","VARCHAR(8)","NOT NULL",1,"","占いを行った年月日",$FFFFFFFF,""
+Field="占いID","fortune_id","BIGINT","NOT NULL",,"","引き当てられた占い",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190307141347
+Position="Main",1000,600
+
+[Entity]
+PName=fortunes
+LName=占い
+Comment=占いを格納するマスタ
+TableOption=
+Page=Main
+Left=1550
+Top=400
+Field="占いID","fortune_id","BIGINT","NOT NULL",0,"","占いを一意に特定するID",$FFFFFFFF,""
+Field="メッセージ","message","TEXT",,,"","表示するメッセージ",$FFFFFFFF,""
+Field="パス","path","VARCHAR(500)","NOT NULL",,"","表示するリソースへのパス",$FFFFFFFF,""
+Field="得点","score","INT","NOT NULL",,"","この占いの得点",$FFFFFFFF,""
+Field="有効か","enabled","BINARY","NOT NULL",,"1","該当の占いが有効か",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190307140637
+Position="Main",1550,400,302,259
+
+[Entity]
+PName=users
+LName=ユーザー
+Comment=ユーザー情報を格納する
+TableOption=
+Page=Main
+Left=400
+Top=400
+Field="ユーザーID","user_id","BIGINT auto_increment","NOT NULL",0,"","ユーザーを一意に特定するid",$FFFFFFFF,""
+Field="ログインID","login_id","VARCHAR(50)","NOT NULL",,"","ログイン時に使用するID",$FFFFFFFF,""
+Field="パスワード","password","VARCHAR(255)","NOT NULL",,"","ログイン時に使用するパスワード",$FFFFFFFF,""
+Field="ユーザー種別","user_type","CHAR(1)","NOT NULL",,"\q1\q","ユーザーを区分けする値(\Q1\Q=一般, \Q2\Q=管理者)",$FFFFFFFF,""
+Field="作成日時","created_at","DATETIME","NOT NULL",,"","データを作成した日時",$FFFFFFFF,""
+Index=users_login_id_uniq=2,login_id
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190307144955
+Position="Main",400,400,278,246
