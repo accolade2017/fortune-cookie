@@ -29,7 +29,7 @@ public class SampleController {
 
 
     @GetMapping("/sample")
-    public String index(Model model) {
+    public String sample(Model model) {
 //        System.out.println("Hello");
 //        this.jdbcTemplate.
 
@@ -56,6 +56,12 @@ public class SampleController {
 
     }
 
+
+    @GetMapping("/")
+    public String index(Model model) {
+        return "sample";
+
+    }
 
 
     @Data
