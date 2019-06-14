@@ -22,7 +22,7 @@ $(document).ready(function(){
 <body>
   <div class="uk-container">
     <div class="uk-padding uk-section uk-section-primary">
-      <h1 class="uk-heading-primary">sample</h1>
+      <h1 class="uk-heading-primary">sample222</h1>
       <button class='uk-button uk-button-default'>BUTTON</button>
 
       <c:forEach items="${result}" var="item">
