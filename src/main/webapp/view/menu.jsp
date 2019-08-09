@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,14 +9,12 @@
 </head>
 <body>
 
-<input type="button" onClick="処理">
-<input type="button"onClick="処理">
-<class="light_btn">button</a>
+<button type=“button” onclick="location.href='http://localhost:8080/fortune'">占う</button>
+	<c:if  test="${authority == 'admin' }" >
+		<button type=“button” onclick="location.href='http://localhost:8080/summary'">管理者</button>
+	</c:if>
 
-<button class="button1" type="submit">Button</button>
 
-
-<link rel="stylesheet" type="text/css" href="/fortune-telling/src/main/webapp/view/style.css">
 
 </body>
 </html>
