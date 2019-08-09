@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jp.co.accolade.ft.annotations.NoAuthentication;
 import lombok.Data;
 
 /**
@@ -29,12 +30,11 @@ public class UserController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
+    @NoAuthentication
     @RequestMapping("")
     public String init(Model model) {
         List<User> users = this.searchUsers();
         model.addAttribute("users", users);
-
         return "/mnt/user";
     }
 

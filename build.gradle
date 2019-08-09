@@ -30,5 +30,6 @@ dependencies {
 	runtimeOnly 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	runtimeOnly 'jstl:jstl:1.2'
 	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
 
 	}
