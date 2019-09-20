@@ -7,6 +7,7 @@
 <title>Login</title>
 </head>
 <body>
+<form name="Login" method="post" action="/cgi-bin/Login.cgi">
  <h1>Login</h1>
  <p>UserID</p>
  <p>
@@ -18,6 +19,7 @@
  </p>
  <p>
   <input type="submit" value="login">
+  </form>
 </p>
 </body>
 </html>
