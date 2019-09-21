@@ -7,28 +7,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * メニュー処理のコントローラー.
+ * @author ksato
+ *
+ */
 @Controller
 public class MenuController {
 
+    /** セッション情報. */
 	@Autowired
-	HttpSession session;
+	private HttpSession session;
 
 	@GetMapping("/menu")
 	public String index(Model model) {
-
-		System.out.println("123");
-
-
-		session.setAttribute("data", "保存したいデータ");
-
-		System.out.println(session.getAttribute("data") );
-
-		model.addAttribute("authority","admin");
-
-
-
+		model.addAttribute("isAdmin", "1".equals(this.session.getAttribute("userType")));
 		return "menu";
-
 	}
 
 }

@@ -20,17 +20,16 @@ public class LoginStateAdvisor {
     @Autowired
     HttpSession session;
 
-    @Around("within(jp.co.accolade.ft.controller.*..*)")
+    @Around("within(jp.co.accolade.ft.controller.*..*) || within(jp.co.accolade.ft.controller.*)")
     public Object log(ProceedingJoinPoint point) throws Throwable {
         MethodSignature ms = (MethodSignature)point.getSignature();
         Method m = ms.getMethod();
         if (m.isAnnotationPresent(NoAuthentication.class)) {
             return point.proceed();
         }
-        String storedUserId = (String)session.getAttribute("userId");
-        if (storedUserId == null || storedUserId.isEmpty()) {
-            // TODO 本来はログイン画面に遷移する
-            throw new RuntimeException("権限がありません.");
+        Long storedUserId = (Long)session.getAttribute("userId");
+        if (storedUserId == null) {
+            return "login";
         }
         return point.proceed();
     }

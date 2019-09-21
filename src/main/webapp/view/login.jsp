@@ -5,13 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+
+<style>
+span.error {
+    color: red;
+}
+</style>
 </head>
 <body>
-<form name="Login" method="post" action="/cgi-bin/Login.cgi">
+<form name="Login" method="post" action="/login">
  <h1>Login</h1>
- <p>UserID</p>
+ <span class="error">${errMsg}</span>
+ <p>LoginID</p>
  <p>
- <input type="text" name="user_id">
+ <input type="text" name="loginId">
  </p>
  <p>Password</p>
  <p>
@@ -19,7 +26,7 @@
  </p>
  <p>
   <input type="submit" value="login">
-  </form>
 </p>
+  </form>
 </body>
 </html>
