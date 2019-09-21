@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.Data;
 
@@ -28,7 +27,7 @@ public class SampleController {
     private JdbcTemplate jdbcTemplate;
 
 
-    @GetMapping("/sample")
+//    @GetMapping("/sample")
     public String sample(Model model) {
 //        System.out.println("Hello");
 //        this.jdbcTemplate.
@@ -57,7 +56,7 @@ public class SampleController {
     }
 
 
-    @GetMapping("/")
+//    @GetMapping("/")
     public String index(Model model) {
         return "sample";
 

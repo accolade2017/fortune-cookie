@@ -2,13 +2,16 @@ package jp.co.accolade.ft.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.co.accolade.ft.controller.SampleController.Sample;
 
@@ -19,12 +22,25 @@ import jp.co.accolade.ft.controller.SampleController.Sample;
  */
 @Controller
 public class LoginController {
-/**
- * 初期表示
- *
- */
-	@GetMapping("/sample")
-    public String sample(Model model) {
+
+    /** JDBCテンプレート. */
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+
+    /**
+     * 初期表示処理.
+     */
+    @GetMapping("")
+    public String index() {
+        return "login";
+    }
+
+    /**
+     * ログイン処理.
+     */
+	@PostMapping("/login")
+    public String login(Model model) {
 //        System.out.println("Hello");
 //        this.jdbcTemplate.
 
@@ -35,7 +51,6 @@ public class LoginController {
 
         samples.forEach(System.out::println);
 
-
         Sample aSample = new Sample();
         aSample.setId(99L);
         aSample.setName("Tanaka");
@@ -45,8 +60,6 @@ public class LoginController {
         SimpleJdbcInsert insert = new SimpleJdbcInsert(this.jdbcTemplate).withTableName("sample");
         insert.execute(param);
 
-
-
-        return "sample";
+        return "login";
 	}
 }
