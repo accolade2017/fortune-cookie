@@ -39,7 +39,8 @@ public class SampleController {
 
         samples.forEach(System.out::println);
 
-
+//登録する
+        
         Sample aSample = new Sample();
         aSample.setId(99L);
         aSample.setName("Tanaka");
