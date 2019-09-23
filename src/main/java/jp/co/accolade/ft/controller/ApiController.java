@@ -3,6 +3,7 @@ package jp.co.accolade.ft.controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -44,6 +45,10 @@ public class ApiController {
     @ResponseBody
     @NoAuthentication
     public FortuneResponse fortuneTellingApi(@RequestBody MultiValueMap<String, Object> params) {
+        for (Entry<String, List<Object>> entry : params.entrySet()) {
+            System.out.println(entry.getKey());
+            entry.getValue().stream().forEach(System.out::println);
+        }
         String userName = (String)params.getFirst("userName");
         List<Long> userIds = this.jdbcTemplate.queryForList("SELECT user_id FROM users WHERE slack_user_name = ?", new Object[] {userName}, Long.class);
         if (userIds == null || !userIds.stream().findFirst().isPresent()) {
