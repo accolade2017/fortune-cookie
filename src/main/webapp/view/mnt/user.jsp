@@ -29,23 +29,23 @@ $(document).ready(function(){
       <table class="uk-table uk-table-striped uk-table-justify">
         <thead>
           <tr>
+            <th>ユーザーID</th>
             <th>ログインID</th>
             <th>ユーザー名</th>
-            <th>&nbsp;</th>
+            <th>種別</th>
+            <th>Slackユーザー名</th>
           </tr>
         </thead>
         <tbody>
           <c:forEach items="${users}" var="user">
             <tr>
+              <td><c:out value="${user.userId}" /></td>
               <td><c:out value="${user.loginId}" /></td>
               <td><c:out value="${user.name}" /></td>
-              <td><c:out value="${user.userId}" /></td>
+              <td><c:out value="${user.userType}" /></td>
+              <td><c:out value="${user.slackUserName}" /></td>
             </tr>
           </c:forEach>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
         </tbody>
       </table>
 

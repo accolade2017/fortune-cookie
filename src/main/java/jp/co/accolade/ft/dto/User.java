@@ -1,5 +1,7 @@
 package jp.co.accolade.ft.dto;
 
+import java.util.Date;
+
 import lombok.Data;
 
 /**
@@ -24,5 +26,10 @@ public class User {
 
     /** 名称. */
     private String name;
+
+    /** Slackユーザー名. */
+    private String slackUserName;
+
+    private Date createdAt;
 
 }

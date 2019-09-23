@@ -49,7 +49,7 @@ public class ApiController {
             System.out.println(entry.getKey());
             entry.getValue().stream().forEach(System.out::println);
         }
-        String userName = (String)params.getFirst("userName");
+        String userName = (String)params.getFirst("user_name");
         List<Long> userIds = this.jdbcTemplate.queryForList("SELECT user_id FROM users WHERE slack_user_name = ?", new Object[] {userName}, Long.class);
         if (userIds == null || !userIds.stream().findFirst().isPresent()) {
             return this.createFortune("占い失敗", "ユーザーがいません");

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.accolade.ft.annotations.NoAuthentication;
-import lombok.Data;
+import jp.co.accolade.ft.dto.User;
 
 /**
  * ユーザー管理コントローラー.
@@ -66,17 +66,5 @@ public class UserController {
         return null;
     }
 
-    @Data
-    public static class User {
-        /** ユーザーID. */
-        private long userId;
-        /** ログインID. */
-        private String loginId;
-        /** ユーザー名. */
-        private String name;
-        private String password;
-        private String userType;
-        private Date createdAt;
-    }
 
 }

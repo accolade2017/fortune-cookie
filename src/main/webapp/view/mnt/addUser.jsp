@@ -26,9 +26,10 @@ $(document).ready(function(){
             ログインID：<input type="text" name="loginId" /> <br />
             パスワード：<input type="text" name="password" /> <br />
             名前：<input type="text" name="name" /> <br />
+            スラック名:<input type="text" name="slackUserName" />
             <select name="userType"> <br />
-                <option value="1">一般</option>
-                <option value="2">管理者</option>
+                <option value="2">一般</option>
+                <option value="1">管理者</option>
             </select> <br />
             <input type="submit" value="登録" />
         </form>
