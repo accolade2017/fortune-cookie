@@ -1,0 +1,1 @@
+web: java -jar build build/libs/fortune-telling-0.0.1-SNAPSHOT.jar
