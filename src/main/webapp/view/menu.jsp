@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<button type=“button” onclick="location.href='./fortune'">占う</button>
+<form action="./fortune" method="post">
+  <button type=“submit”>占う</button>
+</form>
 <c:if test="${isAdmin}" >
     <button type=“button” onclick="location.href='./summary'">管理者</button>
 </c:if>
