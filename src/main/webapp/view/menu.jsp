@@ -8,15 +8,14 @@
 <title>menu</title>
 </head>
 <body>
-
 <form action="./fortune" method="post">
-  <button type=“submit”>占う</button>
+  <button type=“submit”><img src="./img/fortune_icon.png" /></button>
 </form>
 <c:if test="${isAdmin}" >
-    <button type=“button” onclick="location.href='./summary'">管理者</button>
+    <button type=“button” onclick="location.href='./summary'"><img src="./img/manage_icon.png" /></button>
 </c:if>
 
-<button type=“button” onclick="location.href='./logout'">ログアウト</button>
+<br /><button type=“button” onclick="location.href='./logout'">ログアウト</button>
 
 
 
