@@ -31,4 +31,5 @@ dependencies {
 	runtimeOnly 'jstl:jstl:1.2'
 	runtimeOnly 'com.h2database:h2'
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	runtimeOnly 'org.postgresql:postgresql:42.2.1'
 }
