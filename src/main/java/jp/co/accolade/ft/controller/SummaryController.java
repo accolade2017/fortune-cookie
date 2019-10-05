@@ -26,7 +26,7 @@ public class SummaryController {
       @Autowired
       private JdbcTemplate jdbcTemplate;
       //取得用SQL
-      private static final String GET_SQL = "select count(*) as count, us.login_id, sum(frs.score) as score from  fortunes frs inner join users_fortunes ufs on frs.fortune_id = ufs.fortune_id inner join users us on ufs.user_id = us.user_id where SUBSTR(ufs.fortune_ymd, 0, 6) =%s group by us.login_id,SUBSTR(ufs.fortune_ymd, 0, 6)" ;
+      private static final String GET_SQL = "select count(*) as count, us.login_id, sum(frs.score) as score from  fortunes frs inner join users_fortunes ufs on frs.fortune_id = ufs.fortune_id inner join users us on ufs.user_id = us.user_id where SUBSTR(ufs.fortune_ymd, 0, 6) = '%s' group by us.login_id,SUBSTR(ufs.fortune_ymd, 0, 6)" ;
       //プルダウン用
       private static final String GET_YMD = "select substr(FORTUNE_YMD,0,6) as fortuneYmd from USERS_FORTUNES  group by substr(FORTUNE_YMD,0,6) ";
       @GetMapping("/summary")
