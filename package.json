@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/accolade2017/fortune-cookie#readme",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.5.0"
   }
 }
